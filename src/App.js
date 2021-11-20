@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react'
+import { MapView } from './componentes/MapView'
+import { ContainerCard } from './componentes/ContainerCard'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export const App = () => {
+    const [map, setMap] = useState(null)
+    const [position, setPosition] = useState({
+        'active': false,
+        'pos': []
+    })
+
+    function geoSucces(position) {
+        setPosition({
+            'active': true,
+            'pos': [position.coords.latitude, position.coords.longitude]
+        });
+        console.log(position.coords.latitude, position.coords.longitude);
+    }
+
+    function geoError(position) {
+        setPosition({
+            'active': false,
+            'pos': [-20.213349467685, -70.148566067219]
+        });
+    }
+
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition(geoSucces, geoError);
+    }, [])
+
+
+    return (
+        <div>
+            <h1>Mapa Bencineras</h1>
+            <hr />
+
+            <div className="container">
+                {
+                    position.pos.length > 0 &&
+
+                    <ContainerCard map={map} position={position.pos} />
+                }
+
+
+                {position.pos.length > 0 &&
+                    <MapView
+                        setMap={setMap}
+                        myPos={position}
+                    />}
+            </div>
+        </div>
+    )
 }
-
-export default App;

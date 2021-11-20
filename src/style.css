@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+}
+
+.containerCard {
+    width: 100%;
+    
+}
+
+.containerScroll {
+    height: 700px;
+    width: 100%;
+    overflow: scroll;
+    
+}
+
+.leaflet-container {
+    width: 1400px;
+    height: 700px;
+}
+
+.card {
+    margin: auto;
+    padding: 1px;
+    border-bottom: 1px solid black;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.card:hover {
+    background-color: rgb(243, 241, 241);
+    padding: 1px;
+}
+
+.inputSearch{
+    margin: 10px auto;
+}
+
+.inputSearch[type="text"]{
+    height: 25px;
+    width: 400px;
+}
