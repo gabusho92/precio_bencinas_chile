@@ -43,7 +43,8 @@ export const App = () => {
                 }
 
 
-                {position.pos.length > 0 &&
+                {
+                    position.pos.length > 0 &&
                     <MapView
                         setMap={setMap}
                         myPos={position}

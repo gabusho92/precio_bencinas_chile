@@ -1,8 +1,7 @@
 import React from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
-
-import iconGeoPosition from '../assets/icons8-geo-cerca-100.png'
+import markerIconPng from "leaflet/dist/images/marker-icon.png"
 import { Icon } from 'leaflet'
 
 
@@ -47,7 +46,7 @@ export const MapView = ({ setMap, myPos }) => {
 
         {
           myPos.active &&
-          <Marker position={myPos.pos} icon={new Icon({ iconUrl: iconGeoPosition, iconSize: [25, 41], iconAnchor: [12, 41] })}>
+          <Marker position={myPos.pos} icon={new Icon({ iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41] })}>
           <Popup>
             I am here.
           </Popup>

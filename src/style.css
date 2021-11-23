@@ -20,9 +20,10 @@
 }
 
 .card {
+    display: flex;
     margin: auto;
     padding: 1px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid gray;
     font-size: 12px;
     cursor: pointer;
 }
@@ -32,11 +33,17 @@
     padding: 1px;
 }
 
-.inputSearch{
-    margin: 10px auto;
+
+.card-image {
+    margin-left: auto;
+} 
+
+.inputs {
+    padding-left: 20px;
+
 }
 
-.inputSearch[type="text"]{
+.inputSearch{
     height: 25px;
     width: 400px;
 }
