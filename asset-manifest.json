@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/precio_bencinas_chile/static/css/main.904557cb.chunk.css",
+    "main.js": "/precio_bencinas_chile/static/js/main.7a5ef812.chunk.js",
+    "main.js.map": "/precio_bencinas_chile/static/js/main.7a5ef812.chunk.js.map",
+    "runtime-main.js": "/precio_bencinas_chile/static/js/runtime-main.6fa6b958.js",
+    "runtime-main.js.map": "/precio_bencinas_chile/static/js/runtime-main.6fa6b958.js.map",
+    "static/css/2.68ba508b.chunk.css": "/precio_bencinas_chile/static/css/2.68ba508b.chunk.css",
+    "static/js/2.a0cf9c17.chunk.js": "/precio_bencinas_chile/static/js/2.a0cf9c17.chunk.js",
+    "static/js/2.a0cf9c17.chunk.js.map": "/precio_bencinas_chile/static/js/2.a0cf9c17.chunk.js.map",
+    "index.html": "/precio_bencinas_chile/index.html",
+    "static/css/2.68ba508b.chunk.css.map": "/precio_bencinas_chile/static/css/2.68ba508b.chunk.css.map",
+    "static/css/main.904557cb.chunk.css.map": "/precio_bencinas_chile/static/css/main.904557cb.chunk.css.map",
+    "static/js/2.a0cf9c17.chunk.js.LICENSE.txt": "/precio_bencinas_chile/static/js/2.a0cf9c17.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6fa6b958.js",
+    "static/css/2.68ba508b.chunk.css",
+    "static/js/2.a0cf9c17.chunk.js",
+    "static/css/main.904557cb.chunk.css",
+    "static/js/main.7a5ef812.chunk.js"
+  ]
+}
