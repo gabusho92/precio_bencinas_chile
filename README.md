@@ -15,4 +15,4 @@ Data -> https://desarrolladores.energiaabierta.cl/
 - Leaflet
 - Leaflet React
 
-## https://gabusho92.github.io/precio_bencinas_chile/
+## https://gguzmann.github.io/precio_bencinas_chile/
