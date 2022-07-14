@@ -8,7 +8,7 @@ export const Card = ({ datos, map }) => {
     
 
     return (
-        <div className="card" onClick={() => flyTo(map, [datos[20], datos[21]])} >
+        <div role="button" data-toggle="tooltip" className="card p-3 mb-2 overflow-scroll" onClick={() => flyTo(map, [datos[20], datos[21]])} >
             <div className="card-text">
                 <p>{datos[3]} {datos[4]}, {datos[6]}</p>
                 <p>93: {datos[14]} 95: {datos[17]} 97:{datos[15]}</p>

@@ -68,13 +68,13 @@ export const ContainerCard = ({ map, position }) => {
 
 
     return (
-        <div className="containerCard">
+        <div className="mt-3">
             <div className="inputs">
                 <input className="inputSearch" type="text" name="busqueda" placeholder="Region, Comuna o Calle..." onChange={handleChange} />
                 <button className="btn-pos" onClick={() => flyTo(map, position)}><img className=".btn-pos-image" src={markerIconPng} width="20" height="20" alt="button" /></button>
             </div>
                 <hr />
-            <div className="containerScroll">
+            <div className="containerCard overflow-scroll">
                 {
                     showCard
 

@@ -1,49 +1,24 @@
-.container {
-    display: flex;
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.app {
+    height: 100vh;
+    overflow: hidden;
 }
 
 .containerCard {
-    width: 100%;
-    
-}
-
-.containerScroll {
-    height: 700px;
-    width: 100%;
-    overflow: scroll;
-    
+    height: 75vh;
+    /* overflow-y: scroll; */
+    /* border: 1px solid black; */
 }
 
 .leaflet-container {
-    width: 1400px;
+    width: 900px;
     height: 700px;
 }
 
-.card {
-    display: flex;
-    margin: auto;
-    padding: 1px;
-    border-bottom: 1px solid gray;
-    font-size: 12px;
-    cursor: pointer;
-}
-
 .card:hover {
-    background-color: rgb(243, 241, 241);
-    padding: 1px;
-}
-
-
-.card-image {
-    margin-left: auto;
-} 
-
-.inputs {
-    padding-left: 20px;
-
-}
-
-.inputSearch{
-    height: 25px;
-    width: 400px;
+    background-color: rgba(0, 0, 0, .1);
 }

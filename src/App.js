@@ -31,11 +31,11 @@ export const App = () => {
 
 
     return (
-        <div>
+        <div className='container app'>
             <h1>Mapa Bencineras</h1>
             <hr />
 
-            <div className="container">
+            <div className="d-flex gap-3">
                 {
                     position.pos.length > 0 &&
 
