@@ -2,6 +2,7 @@
   "name": "app",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://api.cne.cl/",
   "homepage": "https://gabusho92.github.io/precio_bencinas_chile/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.0",

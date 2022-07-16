@@ -1,15 +1,44 @@
 import React, { useEffect, useState } from 'react'
 import { MapView } from './componentes/MapView'
 import { ContainerCard } from './componentes/ContainerCard'
+import { distancia } from './helpers/distancia'
+
 
 
 export const App = () => {
+    const key = 'DaIOOwB17V';
+    let url = `https://api.cne.cl/v3/combustibles/vehicular/estaciones?token=${key}`
+
     const [map, setMap] = useState(null)
     const [position, setPosition] = useState({
         'active': false,
-        'pos': []
+        'pos': ''
     })
 
+    const [bencineras, setBencineras] = useState(null)
+
+
+    useEffect(() => {
+        navigator.geolocation.getCurrentPosition(geoSucces, geoError)
+    }, [])
+
+    useEffect(() => {
+        if (position.pos.length > 0) {
+
+            console.log('mi posicion:', position.pos)
+            fetch(url).then(respo => respo.json())
+                .then(data => setBencineras(data.data.map((element) => {
+                    const dist = distancia(position.pos, [element.ubicacion.latitud, element.ubicacion.longitud]).toFixed(2)
+                    return { ...element, distancia: Number(dist) }
+
+                }).sort((a, b) => a.distancia - b.distancia)))
+        }
+
+
+    }, [position])
+
+
+    // POSICION SI PERMITE UBICACION
     function geoSucces(position) {
         setPosition({
             'active': true,
@@ -18,6 +47,7 @@ export const App = () => {
         console.log(position.coords.latitude, position.coords.longitude);
     }
 
+    // POSICION SI NO PERMITE UBICACION
     function geoError(position) {
         setPosition({
             'active': false,
@@ -25,30 +55,39 @@ export const App = () => {
         });
     }
 
-    useEffect(() => {
-        navigator.geolocation.getCurrentPosition(geoSucces, geoError);
-    }, [])
+    // useEffect(() => {
+    //     if(bencineras)
+    //     {
+
+    //         navigator.geolocation.getCurrentPosition(geoSucces, geoError);
+    //     }
+    // }, [])
 
 
     return (
-        <div className='container app'>
+        <div className='container'>
             <h1>Mapa Bencineras</h1>
             <hr />
 
-            <div className="d-flex gap-3">
+            <div className="d-flex gap-3 app-conteiner justify-content-center">
                 {
-                    position.pos.length > 0 &&
+                    // RENDERIZAR LISTA
 
-                    <ContainerCard map={map} position={position.pos} />
+                    bencineras
+                        ? position.pos.length > 0
+                            ?
+                            [
+                                <ContainerCard key={0} map={map} position={position.pos} bencineras={bencineras} />,
+                                <MapView key={1} setMap={setMap} myPos={position} bencineras={bencineras} />
+                            ]
+                            : ''
+                        : <div class="spinner-border m-auto" role="status">
+                        <span class="sr-only">Loading...</span>
+                      </div>
                 }
 
 
-                {
-                    position.pos.length > 0 &&
-                    <MapView
-                        setMap={setMap}
-                        myPos={position}
-                    />}
+
             </div>
         </div>
     )

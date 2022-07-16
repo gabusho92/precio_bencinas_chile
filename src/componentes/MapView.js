@@ -7,30 +7,13 @@ import { Icon } from 'leaflet'
 
 import 'leaflet/dist/leaflet.css';
 import '../style.css'
-import { datos } from '../data'
+// import { datos } from '../data'
 import { ShowMarker } from './ShowMarker';
 
 
-export const MapView = ({ setMap, myPos }) => {
+export const MapView = ({ setMap, myPos, bencineras }) => {
 
 
-  //const position = [-33.5324252, -70.5859751]
-
-
-  const MarkPop = datos.map(x => (
-    <ShowMarker
-      key={x[0]}
-      loc={[x[20], x[21]]}
-      empresa={x[10]}
-      precios={[x[14], x[17], x[15]]}
-      region={x[6]}
-      logo={x[12]}
-    />
-  ))
-
-
-
-  //  -33.5324252 -70.5859751
   return (
     <div>
 
@@ -41,16 +24,22 @@ export const MapView = ({ setMap, myPos }) => {
         />
 
         {
-          MarkPop
+          bencineras &&
+          bencineras.map((x,i) => (
+              <ShowMarker
+                key={i}
+                bencinera = {x}
+              />
+            ))
         }
 
         {
           myPos.active &&
           <Marker position={myPos.pos} icon={new Icon({ iconUrl: markerIconPng, iconSize: [25, 41], iconAnchor: [12, 41] })}>
-          <Popup>
-            I am here.
-          </Popup>
-        </Marker>}
+            <Popup>
+              I am here.
+            </Popup>
+          </Marker>}
 
 
       </MapContainer>
