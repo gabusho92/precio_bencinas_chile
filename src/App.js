@@ -65,10 +65,16 @@ export const App = () => {
 
 
     return (
-        <div className='container'>
-            <h1>Mapa Bencineras</h1>
-            <hr />
+        <div>
 
+            <nav className="navbar navbar-light bg-dark">
+                <a className="navbar-brand text-white p-3" href="#">
+                        Precio Bencinas
+                </a>
+            </nav>
+
+            <hr />
+            <div >
             <div className="d-flex gap-3 app-conteiner justify-content-center">
                 {
                     // RENDERIZAR LISTA
@@ -81,13 +87,14 @@ export const App = () => {
                                 <MapView key={1} setMap={setMap} myPos={position} bencineras={bencineras} />
                             ]
                             : ''
-                        : <div class="spinner-border m-auto" role="status">
-                        <span class="sr-only">Loading...</span>
-                      </div>
+                        : <div className="spinner-border m-auto" role="status">
+                            <span className="sr-only">Loading...</span>
+                        </div>
                 }
 
 
 
+            </div>
             </div>
         </div>
     )
