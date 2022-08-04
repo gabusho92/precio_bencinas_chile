@@ -19,7 +19,7 @@ export const ContainerCard = ({ map, position, bencineras }) => {
                 {/* <button className="btn btn-primary" onClick={() => flyTo(map, position)}><i class="fa-solid fa-location-dot"></i></button> */}
             </div>
                 <hr />
-            <div className="containerCard overflow-scroll">
+            <div className="containerCard overflow-scroll mb-5">
                 {
                     bencineras.filter(element => {
 
@@ -38,7 +38,7 @@ export const ContainerCard = ({ map, position, bencineras }) => {
                             map={map}
                         />
                     )).slice(0, 20)
-
+                    
                 }
             </div>
         </div>
