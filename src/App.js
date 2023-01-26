@@ -12,7 +12,7 @@ export const App = () => {
     const [map, setMap] = useState(null)
     const [position, setPosition] = useState({
         'active': false,
-        'pos': ''
+        'pos': []
     })
 
     const [bencineras, setBencineras] = useState(null)
@@ -56,25 +56,16 @@ export const App = () => {
         });
     }
 
-    // useEffect(() => {
-    //     if(bencineras)
-    //     {
-
-    //         navigator.geolocation.getCurrentPosition(geoSucces, geoError);
-    //     }
-    // }, [])
-
 
     return (
         <div>
 
-            <nav className="navbar navbar-light bg-dark">
+            <nav className="navbar navbar-light bg-dark mb-3">
                 <a className="navbar-brand text-white p-3" href="#">
                     Precio Bencinas
                 </a>
             </nav>
 
-            <hr />
             <div >
                 <div className="d-flex gap-3 app-conteiner justify-content-center">
                     {

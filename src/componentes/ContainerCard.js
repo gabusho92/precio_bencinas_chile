@@ -16,7 +16,6 @@ export const ContainerCard = ({ map, position, bencineras }) => {
         <div className="mt-3 card-container">
             <div className='d-flex'>
                 <input className="form-control" type="text" name="busqueda" placeholder="Region, Comuna o Calle..." onChange={handleChange} />
-                {/* <button className="btn btn-primary" onClick={() => flyTo(map, position)}><i class="fa-solid fa-location-dot"></i></button> */}
             </div>
                 <hr />
             <div className="containerCard overflow-scroll mb-5">
